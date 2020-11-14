@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from './base.js'
+import Card from './Card'
 
 function List(props){
 
@@ -13,11 +14,9 @@ function List(props){
         fetchData();
     },[props.fetchUrl]);
 
-    return <div>
+    return <div class='row'>
         <h1>{props.title}</h1>
-        <ul>
-            {items.map(item => <li>{'name' in item ? item.name : item.title}</li>)}
-        </ul>
+            {items.map(item => <Card info={item} key={item.id} />)}
     </div>
 
 }
