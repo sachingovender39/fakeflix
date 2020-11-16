@@ -14,7 +14,7 @@ function List(props){
         fetchData();
     },[props.fetchUrl]);
 
-    return <div class='row'>
+    return <div className='ItemRow'>
         <h1>{props.title}</h1>
             {items.map(item => <Card info={item} key={item.id} />)}
     </div>

@@ -2,7 +2,7 @@
   margin:0;
 }
 .App {
-  text-align: center;
+  background-color: #111;
 }
 
 .App-logo {
@@ -40,16 +40,71 @@
   }
 }
 
-.card{
+.ItemCard{
   display:inline-flex;
   margin-right: 10px;
   transition: transform 400ms;
 }
 
-.card:hover {
+.ItemCard:hover {
   transform: scale(1.10);
 }
-.row{
+.ItemRow{
+  padding-left:10px;
   overflow-y: hidden;
   overflow-x: scroll;
+  
+  color:#f4f4f2;
+}
+
+.banner{
+  height:750px;
+  object-fit: contain;
+  color:white;
+}
+.bannerContent{
+  padding-top: 200px;
+  margin-left: 30px;
+}
+
+.bannerTitle{
+  line-height:5rem;
+  font-size:2.5rem;
+}
+
+.bannner_btn_section{
+  padding:1rem 0;
+}
+
+.banner_btn{
+  margin-right:10px;
+  height:4rem;
+  width:10rem;
+  font-weight:bolder;
+}
+
+.bannerDetails{
+  font-size: 1.5rem;
+  max-width: 60%;
+  display:inline-block;
+}
+
+.gradient{
+  height:300px;
+  background-image: linear-gradient(
+    180deg,transparent,rgba(12, 12, 12, 0.6),#111
+  );
+
+}
+
+.navitem{
+  margin-right:15px;
+  color:white;
+}
+
+.NavBar{
+  background-color:transparent;
+  color:white;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
 }
