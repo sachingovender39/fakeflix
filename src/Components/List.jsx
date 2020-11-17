@@ -16,7 +16,9 @@ function List(props){
 
     return <div className='ItemRow'>
         <h1>{props.title}</h1>
+            <div className='items'>
             {items.map(item => <Card info={item} key={item.id} />)}
+            </div>
     </div>
 
 }
