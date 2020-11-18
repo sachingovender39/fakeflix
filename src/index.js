@@ -10,8 +10,16 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+const splash = document.querySelector('.splash');
+const navbar = document.querySelector('#navbar');
 
-console.log(process.env.REACT_APP_TMDB);
+document.addEventListener('DOMContentLoaded',(e) => {
+  setTimeout(() => {
+    splash.classList.add('display-none');
+    navbar.classList.remove('hide')
+  },3500);
+
+});
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

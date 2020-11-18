@@ -14,21 +14,39 @@ function Banner(props){
         }
         fetchData();
     },[props.url])
-    console.log(item);
     const backdrop = 'https://image.tmdb.org/t/p/original/'+item.backdrop_path;
-    console.log(backdrop);
     const link ='url("'+backdrop+'https://image.tmdb.org/t/p/original/$(item?.backdrop_path)")';
-    console.log(link)
-    return <header className='banner' style={{//backgroundSize:'cover',backgroundImage:{link},backgroundPosition:'center center'
+    function play(){
+        props.view(item?.title || item?.name || item?.original_name);
+    }
+    var show = false;
+    function showExtra(){
+        const extra =document.getElementById('extra');
+        if (show){
+            extra.classList.remove('extra_show');
+            extra.classList.add('extra_hidden');
+        }
+        else{
+            extra.classList.add('extra_show');
+            extra.classList.remove('extra_hidden');
+        }
+        show = !show;
+
+    }
+    return <header className='banner' style={{
     backgroundImage:`${path}`,
     backgroundSize:'cover',
-    backgroundPosition:'center center'
+    backgroundPosition:'center top'
 }}>
         <div className='bannerContent'>
         <h1 className='bannerTitle'>{item?.title || item?.name || item?.original_name}</h1>
         <div className='bannner_btn_section'> 
-        <Button className='banner_btn' variant='light' size='lg'><i class="fas fa-play"></i> Play</Button>
-        <Button className='banner_btn' variant='secondary' size='lg' style={{opacity:0.8}}><i class="fas fa-info-circle"></i> More Info</Button>  
+        <Button className='banner_btn' variant='light' size='lg' onClick={play}><i className="fas fa-play"></i> Play</Button>
+        <Button className='banner_btn' variant='secondary' size='lg' style={{opacity:0.8}} onClick={showExtra}><i className="fas fa-info-circle"></i> More Info</Button>  
+        <div id='extra' className='extra_hidden'>
+        <p><i class="fas fa-star"></i> {item.vote_average}</p>
+        <p>Initial Release Date: {item.first_air_date}</p>
+        </div>
         </div>
         <span className='bannerDetails'>{item.overview}</span>
         </div>

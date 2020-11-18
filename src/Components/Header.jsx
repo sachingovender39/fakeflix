@@ -18,7 +18,7 @@ function Header(){
         });
         return () => {window.removeEventListener('scroll');};
     },[]);
-    return <div>
+    return <div id='navbar' className='hide'>
     <Navbar className='NavBar' style={show ?{backgroundColor:'black'} : null} fixed='top'>
     <Navbar.Brand href="#home"><img src='https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg' height='50px'></img></Navbar.Brand>
     <Nav className="mr-auto" style={{float:'right'}}>
